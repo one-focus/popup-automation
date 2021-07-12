@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fitness-automation-299213",
+  "private_key_id": "675b2746599f7d2fb861cc79f4b6e5902ee9ffec",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC9soaYqUlSCwa8\n1+A1S9utGDZDELXVOG1bdZsldauM3nwn0+Puk7R/p/bADBXdw4PPzcNIULjamcUB\nOU9tbu8J+Lv73QjZCApsarkOTaR/qP7jCO4wxKsKJb3ZdxF11yvjBldoIN8Bj0i3\nwHGWRoriHD4gRxhWyluHtmocxrtGbQtTzb/qrNnAOfS7OZ+OBcB302Gy0v34+9UL\nSR5LkKPH/OdaLMWEHFFBrlnoU9Nn8ZNRyrVyKr1cIZNYlji2rtwPW9M0IS9/rY6t\nB94Mqucu+646bOHxAX1g1GvikXGhvE+m0xIzU+Mv1ZqNBpUiw1A1ZUpJ44hhbrf/\nWBN52AJzAgMBAAECggEAJFcuF9Lee/wmx0in6C3nIKrxwjlSTE2qDYpjNXLscWkx\n6cNa+BqNyqLXz4TBL6HD/6xQi+sC7sXkis562+ETpBplkOOQTVuP+6MaXpYbPGWY\nps/QKcGTbrc6Po3j52pYOv69AfLCJh9X8/PHDt3mv1hfwnk8PWw4yq/0dhzQRbZL\np0rTeDPXPNjOfeE44++wveuAIpmWg3AfjnPMtLIOINW4wAQWh8lROjasfbePX3v2\nhFeOhG5a8kKkCEs+Ug5sKwkKY+0XZVXBRkpd4RluYL+TDM3rcdiTRTXYcJThGsco\nOHjrj2pO/mdY1pGBtWFR/xUAPkHzko3RvVlcZ75j+QKBgQDkZTLGEwENO52UjgFV\nFXaPjs2tYMQTkNX7TwbMMhdILGbuKugbJxTewrdrtB+NL40ukKPpt7NlpswJOFbr\nuXzrGsB7S6AuuQ7pmeAx6l+D3bpA7sXytsdV6/kSIgq415bVTWSUllQqwyIX2aLf\nAJBP5kWYd4pK3OJsfBm6MrYajQKBgQDUn/h9mpiKn3v9MC6r30Dbr9KVtnH9Xofy\nw06NOKKhoVbFn3qwR3WTK7aLQyY0Asd9hcDOdf+KwMgQ2IymIRZUBcVrleSflkqq\nSzcVgF5xcbfGuDXn8/EDBf4VFtoqTzAKRYHmzMao+YJyVD3M3v4FAtLL1ZtpBTPl\nqOcAdKXQ/wKBgC/TDPWy5wZ5VD7WGWtSijf3RBQo7gXWzyfHXXoGhx+CxK7cZyvA\nXDtk9HlmBzFOIrb8bIY1BCil65WGqZTEi2bDfEiVBl6iO4Aoy2xIUmXPWP/dv69a\nHJVeSxJD9JDN+/SANy5x5//oSkxKMzOU76L7adlKNrgEVpk2x0BY/A7FAoGBAK1k\nFvw2yhahoDcEx8qZMQb2BsDYG3UHVc3+v1wix10PePeH6kE+xP7TMvW2OL1JVu1h\n2a2ERHQeaghyz5/ac57pZekqP1p08UaWN8FtAZd5qOiA6FTTdcOFa4I/NII0OXTm\n4dwZOhgqANrDH/KmFnh3qPdYpneqKnwqlNamSWJ5AoGBANPxl/Krvv2jSnCwxeMa\nCIoV1YwKDf37qReCyGLH7mcMATr2okuxBOsjXD+KJPenGaDSxIeKtA55b0lmBX1c\nShZOaP79MozQ0ER4wL3CihiZCf4VVfaSVQHZkoM4mQmFXjhL11aBx8h0djmwXuBX\npRravVqyMHh6FIn8fi36+twI\n-----END PRIVATE KEY-----\n",
+  "client_email": "fitness-automation@fitness-automation-299213.iam.gserviceaccount.com",
+  "client_id": "105683400608909064547",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/fitness-automation%40fitness-automation-299213.iam.gserviceaccount.com"
+}
