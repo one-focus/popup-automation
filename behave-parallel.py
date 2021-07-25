@@ -1,8 +1,6 @@
 """
 Behave runner for running features asynchronously.
 """
-import sys
-import time
 from multiprocessing import Pool
 from subprocess import call, Popen, PIPE
 from glob import glob
@@ -22,10 +20,9 @@ def parse_arguments():
     :return: Parsed arguments
     """
     parser = argparse.ArgumentParser('Run Ikarus in parallel mode')
-    parser.add_argument('--processes', '-p', type=int, help='Maximum number of processes. Default = 5', default=5)
+    parser.add_argument('--processes', '-p', type=int, help='Maximum number of processes. Default = 5', default=10)
     parser.add_argument('--verbose', '-v', action='store_true', help='verbose output')
     parser.add_argument('--tags', '-t', help='specify behave tags to run')
-    parser.add_argument('--time', '-ti', help='specify behave timeout to run')
     parser.add_argument('--define', '-D', action='append', help='Define user-specific data for the config.userdata '
                                                                 'dictionary. Example: -D foo=bar to store it in '
                                                                 'config.userdata["foo"].')
@@ -60,9 +57,7 @@ def main():
     Runner
     """
     args = parse_arguments()
-    print(sys.argv)
     pool = Pool(args.processes)
-    time.sleep(int(args.define[0])*60)
     if args.tags:
         p = Popen(f'behave -d -f json --no-summary -t {args.tags}',
                   stdout=PIPE, shell=True)

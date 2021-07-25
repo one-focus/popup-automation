@@ -1,13 +1,12 @@
-from .main_page import MainPage
-from .alfabank_page import AlfaBank
-from .cloudpaymetns_page import CloudPayments
-from .cart_page import CartPage
+from .emk24_page import Emk24Page
+from .emkmet_ru_page import EmkMetRuPage
 
 page_map = {
-    "main": MainPage,
-    "alfabank": AlfaBank,
-    "cart": CartPage,
-    "cloudpayments": CloudPayments
+    "emk24.ru": Emk24Page,
+    "emk24.by": Emk24Page,
+    "emk24.kz": Emk24Page,
+    "emk24.com.ua": Emk24Page,
+    "emkmet.ru": EmkMetRuPage,
 }
 
 
