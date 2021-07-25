@@ -1,0 +1,39 @@
+name: Test
+
+on:
+  push:
+  schedule:
+    - cron: '0 6 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        tag: ["regression"]
+        timeout: ['1', '5', '10', '15']
+    steps:
+    - uses: actions/checkout@v2
+    - name: Cache requirements
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install git+https://github.com/behave/behave
+    - name: Install allure
+      run: |
+        curl -o allure-2.7.0.tgz -Ls https://github.com/allure-framework/allure2/releases/download/2.7.0/allure-2.7.0.tgz
+        sudo tar -zxvf allure-2.7.0.tgz -C /opt/
+        sudo ln -s /opt/allure-2.7.0/bin/allure /usr/bin/allure
+        rm -rf allure-2.7.0.tgz
+    - name: Test with behave
+      run: |
+        python behave-parallel.py --tags=${{ matrix.tag }} --define=${{ matrix.timeout }}
