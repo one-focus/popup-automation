@@ -20,7 +20,7 @@ def parse_arguments():
     :return: Parsed arguments
     """
     parser = argparse.ArgumentParser('Run Ikarus in parallel mode')
-    parser.add_argument('--processes', '-p', type=int, help='Maximum number of processes. Default = 5', default=10)
+    parser.add_argument('--processes', '-p', type=int, help='Maximum number of processes. Default = 5', default=1)
     parser.add_argument('--verbose', '-v', action='store_true', help='verbose output')
     parser.add_argument('--tags', '-t', help='specify behave tags to run')
     parser.add_argument('--define', '-D', action='append', help='Define user-specific data for the config.userdata '
