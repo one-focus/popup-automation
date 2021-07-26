@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         tag: ["regression"]
-        timeout: ['1', '5', '10', '15']
+        timeout: ['1']
     steps:
     - uses: actions/checkout@v2
     - name: Cache requirements
