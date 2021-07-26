@@ -9,7 +9,6 @@ from features.pages.base_page import BasePage
 # Inherits from BasePage
 class Emk24Page(BasePage):
     BUTTON_CALL_REQUEST = By.XPATH, '//div[@class="phone-block-links"]/a[contains(@href,"callme.php")]'
-    BUTTON_CALL_REQUEST = By.XPATH, '//div[@class="phone-block-links"]/a[contains(@href,"callme.php")]'
 
     MENUITEM_FIRST_LEFT = By.XPATH, '//div[contains(@class,"header-submenu main-page-menu")]//ul[@class="submenu-list menu-tab js-menu__tab open"]//a[@class="submenu-title__link"]'
     BUTTON_ORDER_IN_1_CLICK = By.XPATH, '//ul[@class="nav nav-tabs"]//a[@href="/order-in-1-click/"]'
@@ -17,10 +16,10 @@ class Emk24Page(BasePage):
     FIELD_NAME = By.XPATH, '//input[@name="fio"]|//input[@name="PROPERTY_VALUES[UNAME]"]|//input[@placeholder="Имя"]'
     FIELD_COMPANY = By.XPATH, '//*[@name="company"]|//*[@name="FIELDS[WORK_COMPANY]"]|//input[@name="PROPERTY_VALUES[COMPANY]"]'
     FIELD_PHONE = By.XPATH, '//*[@name="phone"]|//*[@name="FIELDS[WORK_PHONE]"]|//input[@name="PROPERTY_VALUES[PHONE]"]|//input[@placeholder="Телефон"]'
-    FIELD_EMAIL = By.XPATH, '//*[@name="mail"]|//input[@name="FIELDS[EMAIL]"]|//input[@name="PROPERTY_VALUES[EMAIL]"]|//input[@placeholder="Email"]'
+    FIELD_EMAIL = By.XPATH, '//input[@name="email"]|//*[@name="mail"]|//input[@name="FIELDS[EMAIL]"]|//input[@name="PROPERTY_VALUES[EMAIL]"]|//input[@placeholder="Email"]'
     BUTTON_UPLOAD_FILE = By.ID, 'file_input_mfifiles_send'
     BUTTON_CONTINUE = By.XPATH, '//div[@class="step1"]//span[@class="but_big_card js-continue"]'
-    BUTTON_SEND = By.XPATH, '//div[@class="step2"]//span[@class="but_big_card js-continue"]|//button[contains(@data-event,"USER_SEND_FORM_")]'
+    BUTTON_SEND = By.XPATH, '//div[@class="step2"]//span[@class="but_big_card js-continue"]|//button[contains(@data-event,"USER_SEND_FORM_")]|//input[@type="submit"]'
 
     # order item page
     FIELD_FIRST_COUNT = By.NAME, 'count1'
@@ -31,7 +30,7 @@ class Emk24Page(BasePage):
     BUTTON_CHECKOUT = By.XPATH, '//span[@class="make-purchase"]/../..|//div[@class="form-group form-group-action"]//button'
 
     # checkout page
-    FIELD_COMMENT = By.NAME, 'COMMENT'
+    FIELD_COMMENT = By.XPATH, '//*[@name="COMMENT"]|//textarea[@name="comment"]'
     FIELD_INN = By.XPATH, '//*[contains(@name,"S[INN]")]'
     FIELD_CONTACT_NAME = By.NAME, 'FIELDS[NAME]'
     LABEL_ORDER_NUMBER = By.XPATH, '//div[text()="Номер вашего заказа"]/../div[@class="basket-success-params-val"]'

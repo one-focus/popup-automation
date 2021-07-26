@@ -6,6 +6,7 @@ Feature: Проверка кнопки заказать звонок
     Given open <url> page
     When click on call request button
     When enter "+70000000000" in phone field
+    When wait 1 sec
     When click on Send button
     Then text "Ваше сообщение отравлено" is displayed
     Then email with "[BODY]: Обратный звонок (заявка) <url>" contains "[PHONE]: +70000000000"

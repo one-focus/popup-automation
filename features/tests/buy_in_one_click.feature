@@ -7,8 +7,8 @@ Feature: Проверка кнопки Купить в 1 клик
     When click on first left menuitem
     When enter "1" in first count field
     When click on first buy in one click button
-
-    When enter "test_automation_contact_name" in contact name field
+    When wait 1 sec
+    When enter "test_automation_contact_name" in name field
     When enter "+70000000000" in phone field
     When enter "automation.emk@gmail.com" in email field
     When enter "generated_comment" in comment field
@@ -16,7 +16,7 @@ Feature: Проверка кнопки Купить в 1 клик
 
     Then text "Спасибо, ваш заказ принят" is displayed
 
-    Then email with "order_number" contains "Ваша заявка номер order_number"
+    Then email with "generated_comment" contains "Заказ в 1 клик!;[NAME]: test_automation_contact_name;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com"
 
     Examples:
       | url          |
