@@ -1,5 +1,4 @@
 # Created by Alex Kardash at 24/07/2021
-@regression
 Feature: Проверка кнопки Купить в 1 клик
 
   Scenario Outline: Купить в 1 клик emk24

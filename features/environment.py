@@ -23,7 +23,7 @@ def before_all(context):
         'goog:chromeOptions': {
             # 'mobileEmulation': {'deviceName': 'iPhone X'},
             # 'window-size': ['1920,1080'],
-            'args': ['headless', 'window-size=1920,1080']
+            # 'args': ['headless', 'window-size=1920,1080']
         }
     }
     '''

@@ -1,5 +1,4 @@
 # Created by Alex Kardash at 24/07/2021
-@regression
 Feature: Проверка кнопки скачать снандарт
 
   Scenario Outline: Скачать стандарт emk24
