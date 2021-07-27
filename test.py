@@ -5,4 +5,3 @@ for value in values:
     if value in query:
         query = query.replace(value, values[value])
 
-print(query)
