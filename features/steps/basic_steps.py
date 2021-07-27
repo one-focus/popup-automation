@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from time import sleep
 
 from behave import *
@@ -32,7 +32,8 @@ def click_on(context, element_name, section=None):
 @when('enter "(?P<text>[^"]*)" in (?P<field_name>[^"]*)(?: in "(?P<section>[^"]*?)")?')
 def enter_in(context, text, field_name, section=None):
     if 'generated' in text:
-        context.values[text] = text = text.replace("generated", f'{datetime.now().strftime("%d.%m.%Y %H:%M:%S")}')
+        time = datetime.now(timezone.utc) + timedelta(hours=3)
+        context.values[text] = text = text.replace("generated", f'{time.strftime("%d.%m.%Y %H:%M:%S")}')
     if section:
         section_xpath = context.current_page.get_element_by_name(section)[1]
         element = context.current_page.get_element_by_name(field_name)
