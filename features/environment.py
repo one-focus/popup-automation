@@ -3,6 +3,7 @@ import configparser
 import allure
 from selenium import webdriver
 from behave.contrib.scenario_autoretry import patch_scenario_with_autoretry
+import telebot
 
 # TODO check all context attributes on https://behave.readthedocs.io/en/latest/context_attributes.html#user-attributes
 import gmail
@@ -71,13 +72,15 @@ def before_feature(context, feature):
 
 def before_scenario(context, scenario):
     context.driver.delete_all_cookies()
+    print(f'Scenario started: {scenario.name}')
 
 
 def after_step(context, step) -> None:
     if step.status == 'failed':
-        allure.attach(context.driver.get_screenshot_as_png(),
-                      name='bug.png',
-                      attachment_type=allure.attachment_type.PNG)
+        bot = telebot.TeleBot("1461082086:AAGUnZJyEcDwkW1LPHLmezbrXEDzIu6nD8k")
+        bot.send_photo(chat_id=-447406725, photo=context.driver.get_screenshot_as_png(),
+                       caption=f'{step.name}\n🐞{step.exception}')
+        allure.attach('screenshot', context.driver.get_screenshot_as_png())
 
 
 def after_all(context):

@@ -83,7 +83,6 @@ def open_page(context, page_name):
 @when('remember (?P<key>.*) as "(?P<value>.*)"')
 def remember(context, key, value):
     context.values[value] = context.current_page.get_text(key)
-    print(context.values)
 
 
 @then('email with "(?P<query>.*)" contains "(?P<text>.*)"')

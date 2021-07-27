@@ -38,8 +38,8 @@ def search_message(search_string):
             ids = search_ids['messages']
 
         except KeyError:
-            print("WARNING: the search queried returned 0 results")
-            print("returning an empty string")
+            # print("WARNING: the search queried returned 0 results")
+            # print("returning an empty string")
             return ""
 
         if len(ids) > 1:
@@ -94,7 +94,7 @@ def get_message(service, user_id, msg_id):
             return mime_msg.get_payload()
 
         else:
-            print("\nMessage is not text or multipart, returned an empty string")
+            # print("\nMessage is not text or multipart, returned an empty string")
             return ""
     # unsure why the usual exception doesn't work in this case, but
     # having a standard Exception seems to do the trick
