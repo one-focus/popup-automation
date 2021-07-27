@@ -1,5 +1,4 @@
 # Created by Alex Kardash at 24/07/2021
-@regression
 Feature: Проверка сайта forging.emk24.su
 
   Scenario Outline: forging.emk24.su секция 1 и 4

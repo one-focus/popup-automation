@@ -1,5 +1,4 @@
 # Created by Alex Kardash at 24/07/2021
-@regression
 Feature: Проверка сайта emkmet.ru
 
   Scenario Outline: emkmet_ru секция 1 и 4
