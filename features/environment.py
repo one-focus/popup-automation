@@ -80,7 +80,6 @@ def after_step(context, step) -> None:
         bot = telebot.TeleBot("1461082086:AAGUnZJyEcDwkW1LPHLmezbrXEDzIu6nD8k")
         bot.send_photo(chat_id=-447406725, photo=context.driver.get_screenshot_as_png(),
                        caption=f'{context.scenario.name}:{step.name}\n🐞{step.exception}')
-        allure.attach('screenshot', context.driver.get_screenshot_as_png())
 
 
 def after_all(context):
