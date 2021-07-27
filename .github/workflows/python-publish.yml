@@ -35,7 +35,7 @@ jobs:
         rm -rf allure-2.7.0.tgz
     - name: Test with behave
       run: |
-        behave -f allure_behave.formatter:AllureFormatter -o allure-results --tags=${{ matrix.tag }}
+        behave --no-skipped -f allure_behave.formatter:AllureFormatter -o allure-results --tags=${{ matrix.tag }}
     - name: Generate report
       run: |
         allure generate --clean "allure-results" -o "allure-report"
