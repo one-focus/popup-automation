@@ -8,14 +8,28 @@ from features.pages.base_page import BasePage
 
 # Inherits from BasePage
 class ForgingEmk24Su(BasePage):
+    LINK_ORDER_CALL = By.XPATH, '//a[text()="Заказать звонок"]'
+    # section order call
+    SECTION_ORDER_CALL = By.XPATH, '//div[@id="order-call"]'
 
-    BUTTON_LEAVE_ORDER = By.XPATH, '//div[@class="right-image"]//button[text()="Оставить заявку"]'
-    FIELD_NAME = '//form[contains(@class,"form3")]//input[@name="name"]'
-    FIELD_PHONE = '//form[contains(@class,"form3")]//input[@name="phone"]'
-    FIELD_COMPANY = '//form[contains(@class,"form3")]//input[@name="company"]'
-    FIELD_MESSAGE = '//form[contains(@class,"form3")]//input[@name="msg"]'
+    # section 1
+    SECTION_1 = By.XPATH, '//div[@class="right-image"]'
+    BUTTON_LEAVE_ORDER = By.XPATH, '//button[text()="Оставить заявку"]'
+    FIELD_NAME = By.XPATH, '//*[@name="name"]'
+    FIELD_PHONE = By.XPATH, '//*[@name="phone"]'
+    FIELD_COMPANY_NAME = By.XPATH, '//*[@name="company"]'
+    FIELD_EMAIL = By.XPATH, '//*[@name="email"]'
+    FIELD_MESSAGE = By.XPATH, '//*[@name="msg"]'
 
-    BUTTON_SEND = By.XPATH, '//form[contains(@class,"form3")]//button[@type="submit"]'
+    BUTTON_SEND = By.XPATH, '//button[@type="submit"]'
+
+    # section 2
+    SECTION_2 = By.XPATH, '//div[@class="block5 table1"]'
+    BUTTON_BASKET = By.XPATH, '//img[@src="img/cart.png"]'
+
+    # section contacts
+    SECTION_3 = By.XPATH, '//div[@id="contacts"]'
+    SECTION_MODAL = By.XPATH, '//div[@id="order"]'
 
     def _verify_page(self):
         self.on_this_page(self.BUTTON_LEAVE_ORDER)

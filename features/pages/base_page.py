@@ -3,6 +3,7 @@ from time import sleep
 
 from selenium.common.exceptions import StaleElementReferenceException, TimeoutException, \
     ElementClickInterceptedException, NoSuchElementException
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
@@ -21,8 +22,14 @@ class BasePage:
         for element_name in args:
             self.get_element(element_name)
 
+    def hover_element(self, locator):
+        element = self.get_clickable_element(locator)
+        Hover = ActionChains(self.driver).move_to_element(element)
+        Hover.perform()
+
     def click_on(self, element_name, section=None):
         try:
+            self.hover_element(element_name)
             self.get_clickable_element(element_name).click()
         except StaleElementReferenceException:
             sleep(1)

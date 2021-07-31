@@ -9,6 +9,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 import gmail
 import pages
+import urllib.request
 
 use_step_matcher('re')
 
@@ -41,7 +42,7 @@ def enter_in(context, text, field_name, section=None):
             try:
                 context.driver.find_element_by_xpath(f'{section_xpath}{element[1]}').send_keys(text)
             except NoSuchElementException:
-                raise RuntimeError(f'Не могу найти {field_name} в {section}')
+                raise RuntimeError(f'Не могу найти {field_name} в {section}. With xpath {section_xpath}{element[1]}')
         else:
             raise RuntimeError(f'Используй XPATH для локатора {field_name}')
     else:
@@ -100,7 +101,7 @@ def step_impl(context, query, text):
         else:
             RuntimeError(f'Для "{query}" найдено сообщений: {len(messages)}. Должно быть 1. Измените параметр поиска')
     else:
-        raise RuntimeError(f'Сообщение с текстом {query} не пришло на почту в течение 1 минуты')
+        raise RuntimeError(f'Сообщение с текстом {query} не пришло на почту в течение 4 минут')
 
     errors = []
     for search_text in text.split(';'):
@@ -120,3 +121,17 @@ def replace_with_context_values(context, text):
 @when("wait (?P<seconds>.*) sec")
 def step_impl(context, seconds):
     sleep(int(seconds))
+
+
+@when("download cat image")
+def step_impl(context):
+    import ssl
+    ssl._create_default_https_context = ssl._create_unverified_context
+    urllib.request.urlretrieve(
+        "https://cataas.com/cat/says/%D0%BC%D0%BD%D0%B5%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D0%B2%D0%B5%D1%81%D1%8C%20%D0%BC%D0%B5%D1%82%D0%B0%D0%BB",
+        "cat.jpg")
+
+
+@when("open last tab")
+def step_impl(context):
+    context.driver.switch_to_window(context.driver.window_handles[-1])

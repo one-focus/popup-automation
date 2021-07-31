@@ -1,8 +1,8 @@
 # Created by Alex Kardash at 24/07/2021
 @regression
-Feature: Проверка кнопки Заказать в 1 клик
+Feature: Проверка кнопки скачать снандарт emk24
 
-  Scenario Outline: emk24
+  Scenario Outline: Скачать стандарт emk24
     Given open <url> page
     When open url: "<url>/wiki/ansi_standarty/"
     When click on first standard button

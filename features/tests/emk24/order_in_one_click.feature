@@ -1,6 +1,6 @@
 # Created by Alex Kardash at 24/07/2021
 @regression
-Feature: Проверка кнопки Заказать в 1 клик
+Feature: Проверка кнопки Заказать в 1 клик emk24
 
   Scenario Outline: emk24
     Given open <url> page
