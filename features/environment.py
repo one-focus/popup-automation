@@ -78,12 +78,12 @@ def before_scenario(context, scenario):
 
 def after_step(context, step) -> None:
     if step.status == 'failed':
-        # bot = telebot.TeleBot("1461082086:AAGUnZJyEcDwkW1LPHLmezbrXEDzIu6nD8k")
-        # bot.send_photo(chat_id=-447406725, photo=context.driver.get_screenshot_as_png(),
-        #                caption=f'{context.scenario.name}:{step.name}\n🐞{step.exception}')
-        bot = telebot.TeleBot("1275523107:AAF_5t_r80J55Pl-JcVeLcVVOsl7kadqAc4")
-        bot.send_photo(chat_id=-407923666, photo=context.driver.get_screenshot_as_png(),
+        bot = telebot.TeleBot("1461082086:AAGUnZJyEcDwkW1LPHLmezbrXEDzIu6nD8k")
+        bot.send_photo(chat_id=-447406725, photo=context.driver.get_screenshot_as_png(),
                        caption=f'{context.scenario.name}:{step.name}\n🐞{step.exception}')
+        # bot = telebot.TeleBot("1275523107:AAF_5t_r80J55Pl-JcVeLcVVOsl7kadqAc4")
+        # bot.send_photo(chat_id=-407923666, photo=context.driver.get_screenshot_as_png(),
+        #                caption=f'{context.scenario.name}:{step.name}\n🐞{step.exception}')
 
 
 def after_all(context):
