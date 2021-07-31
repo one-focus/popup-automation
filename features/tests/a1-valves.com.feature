@@ -21,7 +21,6 @@ Feature: Проверка сайта a1-valves.com
     When click on send request button in "<section>"
     When enter "generated_test_automation_email" in name field in "send request section"
     When enter "+70000000000" in phone field in "send request section"
-    When enter "automation.emk@gmail.com" in email field in "send request section"
     When enter "test_automation_company_name" in company name field in "send request section"
     When enter "test_automation_comment" in message field in "send request section"
     When enter "automation.emk@gmail.com" in email field in "send request section"
