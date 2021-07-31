@@ -16,6 +16,7 @@ use_step_matcher('re')
 
 @when('click on (?P<element_name>[^"]*?)(?: in "(?P<section>[^"]*?)")?')
 def click_on(context, element_name, section=None):
+    sleep(0.5)
     if section:
         section_xpath = context.current_page.get_element_by_name(section)[1]
         element = context.current_page.get_element_by_name(element_name)
@@ -32,6 +33,7 @@ def click_on(context, element_name, section=None):
 
 @when('enter "(?P<text>[^"]*)" in (?P<field_name>[^"]*)(?: in "(?P<section>[^"]*?)")?')
 def enter_in(context, text, field_name, section=None):
+    sleep(0.5)
     if 'generated' in text:
         time = datetime.now(timezone.utc) + timedelta(hours=3)
         context.values[text] = text = text.replace("generated", f'{time.strftime("%d.%m.%Y %H:%M:%S")}')
@@ -59,7 +61,7 @@ def text_in_element_is_state(context, text, element):
 @then('text "(?P<text>.*)" is displayed')
 def text_is_state(context, text):
     element = (By.TAG_NAME, 'body')
-    WebDriverWait(context.driver, 5).until(
+    WebDriverWait(context.driver, 10).until(
         ec.text_to_be_present_in_element(element, text), f'Unable to find text: {text}')
 
 
@@ -87,21 +89,21 @@ def remember(context, key, value):
     context.values[value] = context.current_page.get_text(key)
 
 
-@then('email with "(?P<query>.*)" contains "(?P<text>.*)"')
-def step_impl(context, query, text):
+@then('email with "(?P<query>.*)" contains "(?P<text>.*)" in (?P<seconds>.*) sec')
+def step_impl(context, query, text, seconds):
     query = replace_with_context_values(context, query)
     text = replace_with_context_values(context, text)
-    for i in range(20):
+    for i in range(10):
         messages = gmail.search_message(query)
         if len(messages) < 1:
-            sleep(6)
+            sleep(int(seconds) / 10)
         elif len(messages) == 1:
             message = messages[0].replace('\r\n', ' ').replace('\xa0', ' ')
             break
         else:
             RuntimeError(f'Для "{query}" найдено сообщений: {len(messages)}. Должно быть 1. Измените параметр поиска')
     else:
-        raise RuntimeError(f'Сообщение с текстом {query} не пришло на почту в течение 4 минут')
+        raise RuntimeError(f'Сообщение с текстом {query} не пришло на почту в течение {seconds} секунд')
 
     errors = []
     for search_text in text.split(';'):
