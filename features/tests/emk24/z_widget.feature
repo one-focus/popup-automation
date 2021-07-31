@@ -9,4 +9,4 @@ Feature: Проверка zwidget emk24
     When click on wait for call button
     When click on terms checkbox
     Then text "Спасибо за заявку!" is displayed
-    Then email with "Widget: Обратный звонок" contains "Номер: 70000000000"" in 240 sec
+    Then email with "Widget: Обратный звонок" contains "Номер: 70000000000" in 240 sec

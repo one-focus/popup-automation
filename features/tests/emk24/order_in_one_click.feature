@@ -14,7 +14,7 @@ Feature: Проверка кнопки Заказать в 1 клик emk24
     When click on Send button
     Then text "Спасибо за заявку!" is displayed
 
-    Then email with "generated_test_automation_email" contains "<url>;Заказ в 1 клик!;test_automation_user_name;test_company_name;+70000000000;automation.emk@gmail.com"" in 240 sec
+    Then email with "generated_test_automation_email" contains "<url>;Заказ в 1 клик!;test_automation_user_name;test_company_name;+70000000000;automation.emk@gmail.com" in 240 sec
 
     Examples:
       | url          |
