@@ -1,6 +1,6 @@
 # Created by Alex Kardash at 24/07/2021
 @regression
-Feature: Проверка кнопки заказать звонок
+Feature: Проверка кнопки заказать звонок emk24
 
   Scenario Outline: Заказать звонок emk24
     Given open <url> page

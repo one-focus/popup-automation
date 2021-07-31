@@ -1,8 +1,8 @@
 # Created by Alex Kardash at 24/07/2021
 @regression
-Feature: Проверка кнопки Заказать в 1 клик
+Feature: Проверка Заказ сплава emk24
 
-  Scenario Outline: emk24
+  Scenario Outline: Заказ сплава emk24
     Given open <url> page
     When open url: "<url>/wiki/tsvetnye_metally_i_splavy/"
     When click on first splav button

@@ -1,6 +1,6 @@
 # Created by Alex Kardash at 24/07/2021
 @regression
-Feature: Проверка формы на странце контактов
+Feature: Проверка формы на странце контактов emk24
 
   Scenario Outline: контакты emk24
     Given open <url> page

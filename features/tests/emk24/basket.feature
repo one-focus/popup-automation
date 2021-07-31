@@ -1,6 +1,6 @@
 # Created by Alex Kardash at 24/07/2021
 @regression
-Feature: Проверка корзины
+Feature: Проверка корзины emk24
 
   Scenario Outline: корзина emk24
     Given open <url> page
