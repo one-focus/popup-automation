@@ -46,8 +46,7 @@ Feature: Проверка сайта emkmet.ru
     When click on Услуги испытания продукции in "3 section"
     When enter "automation.emk@gmail.com" in email field in "3 section"
     When enter "70000000000" in phone field in "3 section"
-    When enter "generated" in email field in "2 section"
     When click on get price button in "3 section"
 
-    Then email with "generated" contains "Email : automation.emk@gmail.com;Телефон : +7000000000;Услуги по металлообработке;Услуги по испытанию продукции;Услуги испытания продукции" in 240 sec
+    Then email with "Услуги по металлообработке, Услуги по испытанию продукции, Услуги испытания продукции" contains "Email : automation.emk@gmail.com;Телефон : +7000000000" in 240 sec
 
