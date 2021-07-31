@@ -8,7 +8,7 @@ Feature: Проверка сайта railws.com
     When enter "generated_test_automation_email" in name field in "order call section"
     When enter "+9000000000" in phone field in "order call section"
     When click on send button in "order call section"
-    Then email with "generated_test_automation_email" contains "Телефон : +7 900 000 00 00"
+    Then email with "generated_test_automation_email" contains "Телефон : +7 900 000 00 00"" in 240 sec
 
   Scenario Outline: railws.com оставить заявку
     Given open railws.com page
@@ -19,7 +19,7 @@ Feature: Проверка сайта railws.com
     When enter "test_automation_company_name" in company name field in "send request section"
     When enter "test_automation_comment" in message field in "send request section"
     When click on send button in "send request section"
-    Then email with "generated_test_automation_email" contains "Email : automation.emk@gmail.com;Телефон : +7 900 000 00 00;Комментарий : test_automation_comment"
+    Then email with "generated_test_automation_email" contains "Email : automation.emk@gmail.com;Телефон : +7 900 000 00 00;Комментарий : test_automation_comment"" in 240 sec
 
     Examples:
       | section            |

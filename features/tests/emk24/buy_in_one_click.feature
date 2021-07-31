@@ -16,7 +16,7 @@ Feature: Проверка кнопки Купить в 1 клик
 
     Then text "Спасибо, ваш заказ принят" is displayed
 
-    Then email with "generated_comment" contains "Заказ в 1 клик!;[NAME]: test_automation_contact_name;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com"
+    Then email with "generated_comment" contains "Заказ в 1 клик!;[NAME]: test_automation_contact_name;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com"" in 240 sec
 
     Examples:
       | url          |

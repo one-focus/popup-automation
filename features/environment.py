@@ -54,7 +54,7 @@ def before_all(context):
     # -- Remote driver
     # context.driver = webdriver.Remote(command_executor='http://67.207.88.128:4444/wd/hub', desired_capabilities=caps)
 
-    context.driver.implicitly_wait(5)
+    context.driver.implicitly_wait(10)
     context.driver.maximize_window()
     # read config
     parser = configparser.ConfigParser()
@@ -72,7 +72,7 @@ def before_feature(context, feature):
 
 
 def before_scenario(context, scenario):
-    context.driver.delete_all_cookies()
+    # context.driver.delete_all_cookies()
     print(f'Scenario started: {scenario.name}')
 
 

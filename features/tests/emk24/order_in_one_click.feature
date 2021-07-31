@@ -5,7 +5,7 @@ Feature: Проверка кнопки Заказать в 1 клик emk24
   Scenario Outline: emk24
     Given open <url> page
     When click on order in 1 click button
-    When enter "generated_message" in message field
+    When enter "generated_test_automation_email" in message field
     When click on Continue button
     When enter "test_automation_user_name" in name field
     When enter "test_company_name" in company field
@@ -14,7 +14,7 @@ Feature: Проверка кнопки Заказать в 1 клик emk24
     When click on Send button
     Then text "Спасибо за заявку!" is displayed
 
-    Then email with "generated_message" contains "<url>;Заказ в 1 клик!;test_automation_user_name;test_company_name;+70000000000;automation.emk@gmail.com"
+    Then email with "generated_test_automation_email" contains "<url>;Заказ в 1 клик!;test_automation_user_name;test_company_name;+70000000000;automation.emk@gmail.com"" in 240 sec
 
     Examples:
       | url          |

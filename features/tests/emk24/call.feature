@@ -9,7 +9,7 @@ Feature: Проверка кнопки заказать звонок emk24
     When wait 1 sec
     When click on Send button
     Then text "Ваше сообщение отравлено" is displayed
-    Then email with "[BODY]: Обратный звонок (заявка) <url>" contains "[PHONE]: +70000000000"
+    Then email with "[BODY]: Обратный звонок (заявка) <url>" contains "[PHONE]: +70000000000" in 240 sec
 
     Examples:
       | url          |

@@ -135,7 +135,4 @@ def delete_all_emails():
 
 
 if __name__ == '__main__':
-    service = get_service()
-    search_ids = service.users().messages().list(userId='me').execute()
-    if 'messages' in search_ids:
-        [service.users().messages().trash(userId='me', id=id['id']).execute() for id in search_ids['messages']]
+    delete_all_emails()
