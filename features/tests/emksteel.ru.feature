@@ -5,12 +5,12 @@ Feature: Проверка сайта emksteel.ru
   Scenario Outline: emksteel.ru заказать звонок
     Given open emksteel.ru page
     When click on <button>
-    When enter "generated_test_automation_email" in name field in "request call section"
+    When enter "generated_test_automation_email_order_call" in name field in "request call section"
     When enter "test_automation_company" in company name field in "request call section"
     When enter "+70000000000" in phone field in "request call section"
     When click on send button in "request call section"
     Then text "Спасибо за Ваше сообщение" is displayed
-    Then email with "generated_test_automation_email" contains "Запрос звонка emksteel.ru test_automation_company;Пожалуйста, перезвоните мне;[PHONE]: +7 (000) 000-00-00" in 240 sec
+    Then email with "generated_test_automation_email_order_call" contains "Запрос звонка emksteel.ru test_automation_company;Пожалуйста, перезвоните мне;[PHONE]: +7 (000) 000-00-00" in 240 sec
 
     Examples:
       | button                     |
@@ -18,20 +18,9 @@ Feature: Проверка сайта emksteel.ru
       | bottom request call button |
       | request call back button   |
 
-  Scenario: emksteel.ru оставить заявку
-    Given open emksteel.ru page
-    When enter "generated_test_automation_email" in name field in "1 section"
-    When enter "test_automation_company_name" in company name field in "1 section"
-    When enter "automation.emk@gmail.com" in email field in "1 section"
-    When enter "+70000000000" in phone field in "1 section"
-    When enter "test_automation_comment" in message field in "1 section"
-    When click on send button in "1 section"
-    Then email with "generated_test_automation_email" contains "Тема: Запрос от test_automation_company_name;[PHONE]: +7 (000) 000-00-00;[EMAIL]: automation.emk@gmail.com;[BODY]: test_automation_comment" in 240 sec
-
-
   Scenario Outline: emksteel.ru диалог оставить заявку
     Given open emksteel.ru page
-    When enter "test_automation_comment" in message field in "1 section"
+    When enter "test_automation_comment_leave_order" in message field in "1 section"
     When click on <button>
     When wait 1 sec
     When enter "generated_test_automation_email" in name field in "1 section"
@@ -40,7 +29,7 @@ Feature: Проверка сайта emksteel.ru
     When enter "+70000000000" in phone field in "1 section"
     When enter "test_automation_comment" in message field in "1 section"
     When click on send button in "1 section"
-    Then email with "generated_test_automation_email" contains "Тема: Запрос от test_automation_company_name;[PHONE]: +7 (000) 000-00-00;[EMAIL]: automation.emk@gmail.com;[BODY]: test_automation_comment" in 240 sec
+    Then email with "generated_test_automation_email_leave_order" contains "Тема: Запрос от test_automation_company_name;[PHONE]: +7 (000) 000-00-00;[EMAIL]: automation.emk@gmail.com;[BODY]: test_automation_comment" in 240 sec
     Examples:
       | button            |
       | more info button  |
@@ -48,13 +37,13 @@ Feature: Проверка сайта emksteel.ru
 
   Scenario: emksteel.ru оставить заявку
     Given open emksteel.ru page
-    When enter "generated_test_automation_email" in name field in "1 section"
+    When enter "generated_test_automation_email_steel" in name field in "1 section"
     When enter "test_automation_company_name" in company name field in "1 section"
     When enter "automation.emk@gmail.com" in email field in "1 section"
     When enter "+70000000000" in phone field in "1 section"
     When enter "test_automation_comment" in message field in "1 section"
     When click on send button in "1 section"
-    Then email with "generated_test_automation_email" contains "Тема: Запрос от test_automation_company_name;[PHONE]: +7 (000) 000-00-00;[EMAIL]: automation.emk@gmail.com;[BODY]: test_automation_comment" in 240 sec
+    Then email with "generated_test_automation_email_steel" contains "Тема: Запрос от test_automation_company_name;[PHONE]: +7 (000) 000-00-00;[EMAIL]: automation.emk@gmail.com;[BODY]: test_automation_comment" in 240 sec
 
 #  Scenario: emksteel.ru quiz
 #    When download cat image

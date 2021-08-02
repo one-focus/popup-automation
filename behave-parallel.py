@@ -8,6 +8,7 @@ import logging
 import argparse
 import json
 from functools import partial
+import gmail
 
 logging.basicConfig(level=logging.INFO,
                     format='[%(levelname)-8s %(asctime)s] %(message)s')
@@ -20,7 +21,7 @@ def parse_arguments():
     :return: Parsed arguments
     """
     parser = argparse.ArgumentParser('Run Ikarus in parallel mode')
-    parser.add_argument('--processes', '-p', type=int, help='Maximum number of processes. Default = 5', default=1)
+    parser.add_argument('--processes', '-p', type=int, help='Maximum number of processes. Default = 5', default=5)
     parser.add_argument('--verbose', '-v', action='store_true', help='verbose output')
     parser.add_argument('--tags', '-t', help='specify behave tags to run')
     parser.add_argument('--define', '-D', action='append', help='Define user-specific data for the config.userdata '
@@ -56,6 +57,7 @@ def main():
     """
     Runner
     """
+    gmail.delete_all_emails()
     args = parse_arguments()
     pool = Pool(args.processes)
     if args.tags:

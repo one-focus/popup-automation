@@ -11,12 +11,12 @@ Feature: Проверка кнопки Купить в 1 клик
     When enter "test_automation_contact_name" in name field
     When enter "+70000000000" in phone field
     When enter "automation.emk@gmail.com" in email field
-    When enter "generated_comment" in comment field
+    When enter "generated_comment_1_click" in comment field
     When click on Send button
 
     Then text "Спасибо, ваш заказ принят" is displayed
 
-    Then email with "generated_comment" contains "Заказ в 1 клик!;[NAME]: test_automation_contact_name;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com" in 240 sec
+    Then email with "generated_comment_1_click" contains "Заказ в 1 клик!;[NAME]: test_automation_contact_name;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com" in 240 sec
 
     Examples:
       | url          |

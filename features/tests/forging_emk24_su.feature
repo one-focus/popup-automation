@@ -32,8 +32,8 @@ Feature: Проверка сайта forging.emk24.su
   Scenario: forging.emk24.su заказать звонок
     Given open forging.emk24.su page
     When click on order call link
-    When enter "generated_test_automation_email" in name field in "order call section"
+    When enter "generated_test_automation_email_call_ord" in name field in "order call section"
     When enter "+70000000000" in phone field in "order call section"
     When click on send button in "order call section"
     Then text "СПАСИБО ЗА ЗАЯВКУ!" is displayed
-    Then email with "generated_test_automation_email" contains "[FORM]: Заказать обратный звонок;[PHONE]: +70000000000" in 240 sec
+    Then email with "generated_test_automation_email_call_ord" contains "[FORM]: Заказать обратный звонок;[PHONE]: +70000000000" in 240 sec
