@@ -55,7 +55,7 @@ def enter_in(context, text, field_name, section=None):
 def text_in_element_is_state(context, text, element):
     element_text = context.current_page.get_text(element)
     if text not in element_text:
-        raise RuntimeError(f'{element} text is {element_text}. Expected: {text}')
+        raise RuntimeError(f'Текст для элемента {element}: "{element_text}". Ожидаемый: {text}')
 
 
 @then('text "(?P<text>.*)" is displayed')
@@ -103,12 +103,12 @@ def step_impl(context, query, text, seconds):
         else:
             RuntimeError(f'Для "{query}" найдено сообщений: {len(messages)}. Должно быть 1. Измените параметр поиска')
     else:
-        raise RuntimeError(f'Сообщение с текстом {query} не пришло на почту в течение {seconds} секунд')
+        raise RuntimeError(f'Сообщение с текстом "{query}" не пришло на почту в течение {seconds} секунд')
 
     errors = []
     for search_text in text.split(';'):
         if search_text not in message:
-            errors.append(f'"{search_text}" not found in "{message}"')
+            errors.append(f'"{search_text}" не найден в "{message}"')
     if errors:
         raise RuntimeError(errors)
 
