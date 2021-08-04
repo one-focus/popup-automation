@@ -7,6 +7,7 @@ Feature: Проверка корзины emk24
     When click on first left menuitem
     When enter "1" in first count field
     When click on first basket button
+    When wait 5 sec
     Given open url: "<url>/order/"
     When enter "test_automation_comment" in comment field
     When click on checkout button
