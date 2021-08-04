@@ -53,6 +53,7 @@ class Emk24Page(BasePage):
     FIELD_Z_WIDGET_PHONE = By.XPATH, '//*[@name="n"]'
     CHECKBOX_TERMS = By.XPATH, '//input[@id="terms1"]'
     BUTTON_WAIT_FOR_CALL = By.XPATH, '//button[text()="Жду звонка!"]'
+
     def _verify_page(self):
         self.on_this_page(self.BUTTON_ORDER_IN_1_CLICK)
 
@@ -78,6 +79,11 @@ class Emk24Page(BasePage):
                     break
                 else:
                     self.driver.refresh()
+                    super(Emk24Page, self).click_on(element_name)
+            for i in range(10):
+                if self.is_element_displayed(self.FORM_MODAL):
+                    break
+                else:
                     super(Emk24Page, self).click_on(element_name)
             else:
                 raise RuntimeError(

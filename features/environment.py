@@ -10,7 +10,7 @@ import gmail
 
 
 def before_all(context):
-    args = ['headless', 'window-size=1920,1080'] #if platform != 'darwin' else []
+    args = ['headless', 'window-size=1920,1080'] if platform != 'darwin' else []
     caps = {
         # -- Chrome Selenoid options
         'browserName': 'chrome',
@@ -61,6 +61,7 @@ def before_all(context):
     parser.read('behave.ini')
     context.config = parser
     context.values = {}
+    gmail.delete_all_emails()
 
 
 def before_feature(context, feature):
@@ -72,9 +73,9 @@ def before_feature(context, feature):
 
 def before_scenario(context, scenario):
     # context.driver.delete_all_cookies()
+    context.values = {}
     print(f'Scenario started: {scenario.name}')
     context.driver.delete_all_cookies()
-    gmail.delete_all_emails()
 
 
 def after_step(context, step) -> None:
