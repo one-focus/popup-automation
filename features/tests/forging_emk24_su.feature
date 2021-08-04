@@ -12,7 +12,7 @@ Feature: Проверка сайта forging.emk24.su
     When enter "test_automation_comment" in message field in "modal section"
     When click on leave order button in "modal section"
     Then text "СПАСИБО ЗА ЗАЯВКУ!" is displayed
-    Then email with "generated_test_automation_email_1_2" contains "[FORM]: Оставить заявку.;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com;[BODY]: Компания: test_automation_company" in 240 sec
+    Then email with "generated_test_automation_email_1_2" contains "[FORM]: Оставить заявку.;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com;[BODY]: Компания: test_automation_company" in 480 sec
     Examples:
       | button             | section   |
       | leave order button | 1 section |
@@ -27,7 +27,7 @@ Feature: Проверка сайта forging.emk24.su
     When enter "test_automation_comment" in message field in "3 section"
     When click on send button in "3 section"
     Then text "СПАСИБО ЗА ЗАЯВКУ!" is displayed
-    Then email with "generated_test_automation_email_3" contains "[FORM]: Форма заказа внизу;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com;[BODY]: Компания: test_automation_company" in 240 sec
+    Then email with "generated_test_automation_email_3" contains "[FORM]: Форма заказа внизу;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com;[BODY]: Компания: test_automation_company" in 480 sec
 
   Scenario: forging.emk24.su заказать звонок
     Given open forging.emk24.su page
@@ -36,4 +36,4 @@ Feature: Проверка сайта forging.emk24.su
     When enter "+70000000000" in phone field in "order call section"
     When click on send button in "order call section"
     Then text "СПАСИБО ЗА ЗАЯВКУ!" is displayed
-    Then email with "generated_test_automation_email_call_ord" contains "[FORM]: Заказать обратный звонок;[PHONE]: +70000000000" in 240 sec
+    Then email with "generated_test_automation_email_call_ord" contains "[FORM]: Заказать обратный звонок;[PHONE]: +70000000000" in 480 sec

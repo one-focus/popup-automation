@@ -20,7 +20,7 @@ Feature: Проверка корзины emk24
     Then text "Спасибо за заказ!" is displayed
     When remember order number label as "order_number"
 
-    Then email with "order_number" contains "Ваша заявка номер order_number" in 240 sec
+    Then email with "order_number" contains "Ваша заявка номер order_number" in 480 sec
 
     Examples:
       | url          |

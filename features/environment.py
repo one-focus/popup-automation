@@ -74,6 +74,7 @@ def before_scenario(context, scenario):
     # context.driver.delete_all_cookies()
     print(f'Scenario started: {scenario.name}')
     context.driver.delete_all_cookies()
+    gmail.delete_all_emails()
 
 
 def after_step(context, step) -> None:

@@ -42,7 +42,9 @@ def enter_in(context, text, field_name, section=None):
         element = context.current_page.get_element_by_name(field_name)
         if element[0] == 'xpath':
             try:
-                context.driver.find_element_by_xpath(f'{section_xpath}{element[1]}').send_keys(text)
+                element = context.driver.find_element_by_xpath(f'{section_xpath}{element[1]}')
+                element.clear()
+                element.send_keys(text)
             except NoSuchElementException:
                 raise RuntimeError(f'Не могу найти {field_name} в {section}. With xpath {section_xpath}{element[1]}')
         else:
@@ -93,6 +95,7 @@ def remember(context, key, value):
 def step_impl(context, query, text, seconds):
     query = replace_with_context_values(context, query)
     text = replace_with_context_values(context, text)
+    sleep(5)
     for i in range(10):
         messages = gmail.search_message(query)
         if len(messages) < 1:
