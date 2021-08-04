@@ -10,7 +10,7 @@ Feature: Проверка сайта emksteel.ru
     When enter "+70000000000" in phone field in "request call section"
     When click on send button in "request call section"
     Then text "Спасибо за Ваше сообщение" is displayed
-    Then email with "generated_test_automation_email_order_call" contains "Запрос звонка emksteel.ru test_automation_company;Пожалуйста, перезвоните мне;[PHONE]: +7 (000) 000-00-00" in 240 sec
+    Then email with "generated_test_automation_email_order_call" contains "Запрос звонка emksteel.ru test_automation_company;Пожалуйста, перезвоните мне;[PHONE]: +7 (000) 000-00-00" in 480 sec
 
     Examples:
       | button                     |
@@ -29,7 +29,7 @@ Feature: Проверка сайта emksteel.ru
     When enter "+70000000000" in phone field in "1 section"
     When enter "test_automation_comment" in message field in "1 section"
     When click on send button in "1 section"
-    Then email with "generated_test_automation_email_dialog_steel" contains "Тема: Запрос от test_automation_company_name;[PHONE]: +7 (000) 000-00-00;[EMAIL]: automation.emk@gmail.com;[BODY]: test_automation_comment" in 240 sec
+    Then email with "generated_test_automation_email_dialog_steel" contains "Тема: Запрос от test_automation_company_name;[PHONE]: +7 (000) 000-00-00;[EMAIL]: automation.emk@gmail.com;[BODY]: test_automation_comment" in 480 sec
     Examples:
       | button            |
       | more info button  |
@@ -43,7 +43,7 @@ Feature: Проверка сайта emksteel.ru
     When enter "+70000000000" in phone field in "1 section"
     When enter "test_automation_comment" in message field in "1 section"
     When click on send button in "1 section"
-    Then email with "generated_test_automation_email_steel" contains "Тема: Запрос от test_automation_company_name;[PHONE]: +7 (000) 000-00-00;[EMAIL]: automation.emk@gmail.com;[BODY]: test_automation_comment" in 240 sec
+    Then email with "generated_test_automation_email_steel" contains "Тема: Запрос от test_automation_company_name;[PHONE]: +7 (000) 000-00-00;[EMAIL]: automation.emk@gmail.com;[BODY]: test_automation_comment" in 480 sec
 
 #  Scenario: emksteel.ru quiz
 #    When download cat image

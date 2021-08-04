@@ -12,7 +12,7 @@ Feature: Проверка формы на странце контактов emk2
     When enter "automation_message" in message field
     When click on Send button
     Then text "Ваше сообщение отравлено" is displayed
-    Then email with "generated_test_automation_email_contacts" contains "<url>;[NAME]: test_automation_user_name;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com" in 240 sec
+    Then email with "generated_test_automation_email_contacts" contains "<url>;[NAME]: test_automation_user_name;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com" in 480 sec
 
     Examples:
       | url          |
