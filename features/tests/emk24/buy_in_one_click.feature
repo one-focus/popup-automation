@@ -2,7 +2,6 @@
 @regression
 Feature: Проверка кнопки Купить в 1 клик
 
-  @test
   Scenario Outline: Купить в 1 клик emk24
     Given open <url> page
     When click on first left menuitem
