@@ -63,10 +63,9 @@ jobs:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
-    - name: notification
-      if: cancelled() == false
-      uses: xinthink/action-telegram@v1.1
-      with:
-        botToken: ${{ secrets.BOTTOKEN }}
-        chatId: ${{ secrets.CHATID }}
-        jobStatus: ${{ job.status }}
+    - name: send custom message with args
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.CHATID }}
+          token: ${{ secrets.BOTTOKEN }}
+          args: The ${{ github.event_name }} event triggered first step.
