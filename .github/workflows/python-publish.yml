@@ -39,7 +39,7 @@ jobs:
     - name: Generate report
       run: |
         allure generate --clean "allure-results" -o "allure-report"
-        echo "summary=$(grep -A 5 '"failed" :' "$(pwd)/allure-report/widgets/summary.json")" >> $GITHUB_ENV
+        echo "SUMMARY=$(grep -A 5 '"failed" :' "$(pwd)/allure-report/widgets/summary.json")" >> $GITHUB_ENV
     - name: Get Allure history
       uses: actions/checkout@v2
       if: always()
