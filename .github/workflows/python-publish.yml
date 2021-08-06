@@ -75,6 +75,6 @@ jobs:
           Passed ${{ env.PASS_TC }}
           Broken ${{ env.BROKEN_TC }}
           Failed ${{ env.FAILED_TC }}
-          ${{ GITHUB_RUN_NUMBER }}
+          ${{ env.GITHUB_RUN_NUMBER }}
 
 
