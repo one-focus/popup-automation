@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        tag: ["test"]
+        tag: ["regression"]
     steps:
     - uses: actions/checkout@v2
     - name: Cache requirements
@@ -39,6 +39,7 @@ jobs:
     - name: Generate report
       run: |
         allure generate --clean "allure-results" -o "allure-report"
+        echo "DATE=$(date +%d-%m-%Y)" >> $GITHUB_ENV
         echo "TOTAL_TC=`cat "$(pwd)/allure-report/widgets/summary.json" | jq '.statistic.total'`" >> $GITHUB_ENV
         echo "BROKEN_TC=`cat "$(pwd)/allure-report/widgets/summary.json" | jq '.statistic.broken'`" >> $GITHUB_ENV
         echo "FAILED_TC=`cat "$(pwd)/allure-report/widgets/summary.json" | jq '.statistic.failed'`" >> $GITHUB_ENV
@@ -73,9 +74,6 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          Passed ${{ env.PASS_TC }}
-          Broken ${{ env.BROKEN_TC }}
-          Failed ${{ env.FAILED_TC }}
-          https://one-focus.github.io/popup-automation/${{ env.RUN_NUMBER }}/
-
-
+          ${{ env.DATE }}
+          - https://one-focus.github.io/popup-automation/${{ env.RUN_NUMBER }}/
+          - 🟢 ${{ env.PASS_TC }} | 🔴 ${{ env.BROKEN_TC }} | 🔴 ${{ env.FAILED_TC }}

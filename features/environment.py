@@ -1,6 +1,8 @@
 import configparser
 
 from sys import platform
+
+import allure
 from selenium import webdriver
 from behave.contrib.scenario_autoretry import patch_scenario_with_autoretry
 import telebot
@@ -80,12 +82,18 @@ def before_scenario(context, scenario):
 
 def after_step(context, step) -> None:
     if step.status == 'failed':
-        # bot = telebot.TeleBot("1461082086:AAGUnZJyEcDwkW1LPHLmezbrXEDzIu6nD8k")
-        # bot.send_photo(chat_id=-447406725, photo=context.driver.get_screenshot_as_png(),
-        #                caption=f'{context.scenario.name}:{step.name}\n🐞{step.exception}')
-        bot = telebot.TeleBot("1275523107:AAF_5t_r80J55Pl-JcVeLcVVOsl7kadqAc4")
-        bot.send_photo(chat_id=-407923666, photo=context.driver.get_screenshot_as_png(),
+        bot = telebot.TeleBot("1461082086:AAGUnZJyEcDwkW1LPHLmezbrXEDzIu6nD8k")
+        bot.send_photo(chat_id=-447406725, photo=context.driver.get_screenshot_as_png(),
                        caption=f'{context.scenario.name}:{step.name}\n🐞{step.exception}')
+        # bot = telebot.TeleBot("1275523107:AAF_5t_r80J55Pl-JcVeLcVVOsl7kadqAc4")
+        # bot.send_photo(chat_id=-407923666, photo=context.driver.get_screenshot_as_png(),
+        #                caption=f'{context.scenario.name}:{step.name}\n🐞{step.exception}')
+        try:
+            allure.attach(context.driver.get_screenshot_as_png(),
+                          name=f'screenshot',
+                          attachment_type=allure.attachment_type.PNG)
+        except Exception:
+            pass
 
 
 def after_all(context):
