@@ -43,7 +43,7 @@ jobs:
         echo "BROKEN_TC=`cat "$(pwd)/allure-report/widgets/summary.json" | jq '.statistic.broken'`" >> $GITHUB_ENV
         echo "FAILED_TC=`cat "$(pwd)/allure-report/widgets/summary.json" | jq '.statistic.failed'`" >> $GITHUB_ENV
         echo "PASS_TC=`cat "$(pwd)/allure-report/widgets/summary.json" | jq '.statistic.passed'`" >> $GITHUB_ENV
-        echo "RUN_ID=$GITHUB_RUN_ID >> $GITHUB_ENV
+        echo "RUN_ID=$GITHUB_RUN_ID" >> $GITHUB_ENV
     - name: Get Allure history
       uses: actions/checkout@v2
       if: always()
