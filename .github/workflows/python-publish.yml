@@ -68,4 +68,4 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          $(grep -A 5 '"failed" :' "$(pwd)/allure-report/widgets/summary.json")
+          {{ $(grep -A 5 '"failed" :' "$(pwd)/allure-report/widgets/summary.json") }}
