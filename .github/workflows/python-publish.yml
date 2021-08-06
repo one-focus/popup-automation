@@ -72,8 +72,9 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          Total ${{ env.TOTAL_TC }}
+          Passed ${{ env.PASS_TC }}
           Broken ${{ env.BROKEN_TC }}
           Failed ${{ env.FAILED_TC }}
-          Passed ${{ env.PASS_TC }}
+          ${{ GITHUB_RUN_NUMBER }}
+
 
