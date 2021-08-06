@@ -39,6 +39,10 @@ jobs:
     - name: Generate report
       run: |
         allure generate --clean "allure-results" -o "allure-report"
+        echo "TOTAL_TC=`cat "$(pwd)/allure-report/widgets/summary.json" | jq '.statistic.total'`" >> $GITHUB_ENV
+        echo "BROKEN_TC=`cat "$(pwd)/allure-report/widgets/summary.json" | jq '.statistic.broken'`" >> $GITHUB_ENV
+        echo "FAILED_TC=`cat "$(pwd)/allure-report/widgets/summary.json" | jq '.statistic.failed'`" >> $GITHUB_ENV
+        echo "PASS_TC=`cat "$(pwd)/allure-report/widgets/summary.json" | jq '.statistic.passed'`" >> $GITHUB_ENV
     - name: Get Allure history
       uses: actions/checkout@v2
       if: always()
@@ -68,4 +72,8 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          {{ $(grep -A 5 '"failed" :' "$(pwd)/allure-report/widgets/summary.json") }}
+          Total ${{ env.TOTAL_TC }}
+          Broken ${{ env.BROKEN_TC }}
+          Failed ${{ env.FAILED_TC }}
+          Passed ${{ env.PASS_TC }}
+
