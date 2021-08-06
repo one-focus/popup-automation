@@ -1,6 +1,7 @@
 name: Test
 
 on:
+  push:
   schedule:
     - cron: '0 3 * * *'
 jobs:
@@ -8,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        tag: ["regression"]
+        tag: ["test"]
     steps:
     - uses: actions/checkout@v2
     - name: Cache requirements
