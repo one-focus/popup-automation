@@ -39,7 +39,6 @@ jobs:
     - name: Generate report
       run: |
         allure generate --clean "allure-results" -o "allure-report"
-        echo ::set-output name=message::$(grep -A 5 '"failed" :' "$(pwd)/allure-report/widgets/summary.json")
     - name: Get Allure history
       uses: actions/checkout@v2
       if: always()
@@ -69,4 +68,4 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          ${{ steps.vars.outputs.message }}
+          $(grep -A 5 '"failed" :' "$(pwd)/allure-report/widgets/summary.json")
