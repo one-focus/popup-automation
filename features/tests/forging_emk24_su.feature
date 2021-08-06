@@ -37,4 +37,4 @@ Feature: Проверка сайта forging.emk24.su
     When enter "+70000000000" in phone field in "order call section"
     When click on send button in "order call section"
     Then text "СПАСИБО ЗА ЗАЯВКУ!" is displayed
-    Then email with "generated_test_automation_email_call_ord" contains "[FORM]: Заказать обратный звонок;[PHONE]: +70000000000" in 480 sec
+#    Then email with "generated_test_automation_email_call_ord" contains "[FORM]: Заказать обратный звонок;[PHONE]: +70000000000" in 480 sec
