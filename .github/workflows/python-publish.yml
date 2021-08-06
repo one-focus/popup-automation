@@ -37,6 +37,7 @@ jobs:
       run: |
         behave --no-skipped -f allure_behave.formatter:AllureFormatter -o allure-results --tags=${{ matrix.tag }}
     - name: Generate report
+      if: always()
       run: |
         allure generate --clean "allure-results" -o "allure-report"
         echo "DATE=$(date +%d-%m-%Y)" >> $GITHUB_ENV
