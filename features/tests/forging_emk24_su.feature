@@ -29,6 +29,7 @@ Feature: Проверка сайта forging.emk24.su
     Then text "СПАСИБО ЗА ЗАЯВКУ!" is displayed
     Then email with "generated_test_automation_email_3" contains "[FORM]: Форма заказа внизу;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com;[BODY]: Компания: test_automation_company" in 480 sec
 
+  @test
   Scenario: forging.emk24.su заказать звонок
     Given open forging.emk24.su page
     When click on order call link

@@ -1,6 +1,7 @@
 name: Test
 
 on:
+  push:
   schedule:
     - cron: '0 4 * * *'
 jobs:
@@ -8,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        tag: ["regression"]
+        tag: ["test"]
     steps:
     - uses: actions/checkout@v2
     - name: Cache requirements
@@ -38,6 +39,7 @@ jobs:
     - name: Generate report
       run: |
         allure generate --clean "allure-results" -o "allure-report"
+        summary=$(grep -A 5 '"failed" :' "$(pwd)/allure-report/widgets/summary.json")
     - name: Get Allure history
       uses: actions/checkout@v2
       if: always()
@@ -61,3 +63,10 @@ jobs:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
+    - name: notification
+      if: cancelled() == false
+      uses: xinthink/action-telegram@v1.1
+      with:
+        botToken: ${{ secrets.BotToken }}
+        chatId: ${{ secrets.ChatID }}
+        jobStatus: ${{ job.status }}
