@@ -11,7 +11,7 @@ Feature: Проверка сайта emkmet.ru
     When click on get price button in "<section>"
     Then text "СПАСИБО ЗА ЗАЯВКУ!" is displayed
 
-    Then email with "generated_company_name" contains "Компания : generated_company_name;Продукты : test_automation_product;Email : automation.emk@gmail.com;Телефон : +7000000000" in 480 sec
+    Then email with "generated_company_name" contains "Компания : generated_company_name;Продукты : test_automation_product;Email : automation.emk@gmail.com;Телефон : +7000000000" in 900 sec
 
     Examples:
       | section   |
@@ -37,7 +37,7 @@ Feature: Проверка сайта emkmet.ru
     When click on get price button in "2 section"
     Then text "СПАСИБО ЗА ЗАЯВКУ!" is displayed
 
-    Then email with "generated_comment" contains "Email : automation.emk@gmail.com;Телефон : +7000000000;Черный: Балка двутавровая;Нержавейка: Балка двутавровая;Пищевая нержавейка: Фланцы пищевые;Никель: Фитинги;Алюминий: Рифленые листы" in 480 sec
+    Then email with "generated_comment" contains "Email : automation.emk@gmail.com;Телефон : +7000000000;Черный: Балка двутавровая;Нержавейка: Балка двутавровая;Пищевая нержавейка: Фланцы пищевые;Никель: Фитинги;Алюминий: Рифленые листы" in 900 sec
 
   Scenario: emkmet_ru секция 3
     Given open emkmet.ru page
@@ -48,5 +48,5 @@ Feature: Проверка сайта emkmet.ru
     When enter "70000000000" in phone field in "3 section"
     When click on get price button in "3 section"
 
-    Then email with "Услуги по металлообработке, Услуги по испытанию продукции, Услуги испытания продукции" contains "Email : automation.emk@gmail.com;Телефон : +7000000000" in 480 sec
+    Then email with "Услуги по металлообработке, Услуги по испытанию продукции, Услуги испытания продукции" contains "Email : automation.emk@gmail.com;Телефон : +7000000000" in 900 sec
 
