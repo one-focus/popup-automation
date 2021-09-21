@@ -11,7 +11,7 @@ Feature: Проверка Заказ сплава emk24
     When enter "automation.emk@gmail.com" in email field
     When click on Send button
     Then text "Ваше сообщение отравлено" is displayed
-    Then email with "generated_test_automation_email_order_splav" contains "<url>;Обратный звонок (заявка) wiki;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com" in 480 sec
+    Then email with "generated_test_automation_email_order_splav" contains "<url>;Обратный звонок (заявка) wiki;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com" in 900 sec
 
     Examples:
       | url          |
