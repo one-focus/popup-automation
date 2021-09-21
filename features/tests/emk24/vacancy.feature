@@ -13,7 +13,7 @@ Feature: Проверка вакансии emk24
     When enter "generated_test_automation_email_emk24_vacancy" in message field
     When click on Send button
     Then text "Ваше сообщение отравлено" is displayed
-    Then email with "generated_test_automation_email_emk24_vacancy" contains "<url>;Отклик на вакансию;[NAME]: name;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com" in 480 sec
+    Then email with "generated_test_automation_email_emk24_vacancy" contains "<url>;Отклик на вакансию;[NAME]: name;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com" in 900 sec
 
     Examples:
       | url          |
