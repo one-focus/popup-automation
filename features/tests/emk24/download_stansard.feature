@@ -12,7 +12,7 @@ Feature: Проверка кнопки скачать снандарт emk24
     When enter "automation.emk@gmail.com" in email field
     When click on Send button
     Then text "Проверьте, пожалуйста" is displayed
-    Then email with "<inn>" contains "<url>;Запрос на скачивание стандарта;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com" in 480 sec
+    Then email with "<inn>" contains "<url>;Запрос на скачивание стандарта;[PHONE]: +70000000000;[EMAIL]: automation.emk@gmail.com" in 900 sec
 
     Examples:
       | url          | inn       |
