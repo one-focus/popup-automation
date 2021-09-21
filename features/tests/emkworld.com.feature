@@ -11,7 +11,7 @@ Feature: Проверка сайта emkworld.com
     When enter "+70000000000" in phone field in "callback dialog section"
     When click on call me button in "callback dialog section"
 #    Then text "Thank you for your message" is displayed
-    Then email with "generated_test_automation_email_call_order" contains "+70000000000;Тема: Request from test_automation_company_name;Please, call me back +70000000000" in 480 sec
+    Then email with "generated_test_automation_email_call_order" contains "+70000000000;Тема: Request from test_automation_company_name;Please, call me back +70000000000" in 900 sec
 
     Examples:
       | button                           |
@@ -29,7 +29,7 @@ Feature: Проверка сайта emkworld.com
     When enter "test_autoamtion_message" in message field in "<section>"
     When click on send button in "<section>"
 #    Then text "Thank you for your message" is displayed
-    Then email with "generated_test_automation_email_leave_order_emk" contains "+70000000000;Тема: Request from test_automation_company_name" in 480 sec
+    Then email with "generated_test_automation_email_leave_order_emk" contains "+70000000000;Тема: Request from test_automation_company_name" in 900 sec
 
     Examples:
       | button                           | section                      |
@@ -46,5 +46,5 @@ Feature: Проверка сайта emkworld.com
     When enter "+70000000000" in phone field in "contact section"
     When click on call me button in "contact section"
 #    Then text "Thank you for your message" is displayed
-    Then email with "generated_test_automation_email_cont" contains "+70000000000;Тема: Request from test_automation_company_name;Please, call me back +70000000000" in 480 sec
+    Then email with "generated_test_automation_email_cont" contains "+70000000000;Тема: Request from test_automation_company_name;Please, call me back +70000000000" in 900 sec
 
