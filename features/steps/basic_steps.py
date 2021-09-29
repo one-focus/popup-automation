@@ -81,6 +81,7 @@ def open_url(context, url):
 
 @given('open (?P<page_name>.*) page')
 def open_page(context, page_name):
+    context.page_name = page_name
     open_url(context, page_name)
     page_class = pages.factory(page_name)
     context.current_page = page_class(context.driver)
