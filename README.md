@@ -23,7 +23,7 @@ pip install -r requirements.txt
 ```
 behave
 ```
-+ Use tags
++ Use tag
 ```
 behave --tags=regression,search
 ```
