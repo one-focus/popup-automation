@@ -1,10 +1,7 @@
 name: Test
 
 on:
-<<<<<<< HEAD
   push:
-=======
->>>>>>> 1079abc0ae587f64b80a8a334bb5cb42259eaf04
   schedule:
     - cron: '0 3 * * *'
 jobs:
