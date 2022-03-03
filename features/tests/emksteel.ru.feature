@@ -1,8 +1,5 @@
 # Created by Alex Kardash at 24/07/2021
-<<<<<<< HEAD
 @regression
-=======
->>>>>>> 1079abc0ae587f64b80a8a334bb5cb42259eaf04
 Feature: Проверка сайта emksteel.ru
 
   Scenario Outline: emksteel.ru заказать звонок
