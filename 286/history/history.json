@@ -1,0 +1,22 @@
+{
+  "7faf572cfcca69d732baa5f93ff54721" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b5aeaab3f4872682",
+      "reportUrl" : "https://one-focus.github.io/popup-automation/286//#testresult/b5aeaab3f4872682",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646719534455,
+        "stop" : 1646719553349,
+        "duration" : 18894
+      }
+    } ]
+  }
+}

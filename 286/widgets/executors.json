@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://one-focus.github.io/popup-automation",
+  "buildOrder" : 286,
+  "buildName" : "GitHub Actions Run #1949808495",
+  "buildUrl" : "https://github.com/one-focus/popup-automation/actions/runs/1949808495",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://one-focus.github.io/popup-automation/286/"
+} ]

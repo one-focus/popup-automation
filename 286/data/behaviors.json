@@ -1,0 +1,22 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "Проверка сайта a1-valves.com",
+    "children" : [ {
+      "name" : "a1-valves.com заказать звонок -- @1.1 ",
+      "uid" : "b5aeaab3f4872682",
+      "parentUid" : "862ab3b7a6ac2e32ace64044597a5a1b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1646719534455,
+        "stop" : 1646719553349,
+        "duration" : 18894
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "top menu section" ]
+    } ],
+    "uid" : "862ab3b7a6ac2e32ace64044597a5a1b"
+  } ],
+  "name" : "behaviors"
+}
